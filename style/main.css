@@ -1,0 +1,16 @@
+*{
+    margin: 0%;
+}
+body{
+    background-image: url(../fotos/fotos-full/background.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+}
+.bloco {
+    background-color: rgb(255, 255, 255);
+    height: 800px;
+    margin-bottom: 50%;
+}
+.bloco .um{
+    margin-bottom: 0%;
+}
