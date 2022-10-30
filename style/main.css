@@ -10,6 +10,8 @@ body{
 header{
     background-color: rgb(255, 255, 255);
     display: flex;
+    position: fixed;
+    width: 100%;
     
 }
 nav {
@@ -33,6 +35,9 @@ nav li:hover {
 .bloco {
     background-color: rgb(255, 255, 255);
     height: 800px;
+    
+}
+.categorias {
     margin-bottom: 50%;
 }
 img{
