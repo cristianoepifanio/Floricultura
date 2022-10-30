@@ -32,19 +32,19 @@ nav a:hover {
     margin-top: 10%;
 }
 .redes-sociais {
-    margin: auto;
+    
     align-items: center;
     display: flex; 
     flex-direction: row;
+    gap: 20px;
 }
 .fa-brands {
     width: 60px; 
-    height: 60px;
-    display: flex; 
-    flex-direction: row; 
+    height: 60px; 
     justify-content: center; 
     align-items: center; 
     border-radius: 1px white 60px;
+    margin: auto;
     
 }
 .conteiner{
@@ -61,7 +61,9 @@ nav a:hover {
 .bloco {
     
     background-color: rgb(255, 255, 255);
-    height: 800px;
+    height: 300px;
+    padding: 15%;
+    font-size: 20px;
     
 }
 .categorias h1{
@@ -73,11 +75,15 @@ img{
     width: 300px;
     margin: 5px;
 }
-.bloco .um{
-    margin-bottom: 0%;
-}
+
 footer{
     background-color: #884919;
     height: 150px;
     color: #fff;
+    margin: auto;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5%;
 }
