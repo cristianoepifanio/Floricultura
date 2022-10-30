@@ -16,6 +16,9 @@ nav {
     display: flex;
     gap: 4%;
 }
+nav li:hover {
+    color: #fff;
+}
 .conteiner{
     margin: auto;
     margin-top: 1%;
