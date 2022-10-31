@@ -17,14 +17,17 @@ header{
 nav {
     display: flex;
     gap: 6%;
-    width: 25%;
+    width: 28%;
 }
-a {
+nav a {
     text-decoration: none;
-    color: black;
+    color: #fff;
 }
 nav a:hover {
-    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 30px;
+    padding: 6px;
+    transition: 0.3s;
 }
 .foto-perfil {
     border-radius: 50%;
@@ -55,13 +58,13 @@ nav a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: aquamarine;
+    background-color: #076422;
+    color: #fff;
     padding: 15px;
 }
 .bloco {
     
     background-color: rgb(255, 255, 255);
-    height: 300px;
     padding: 15%;
     font-size: 20px;
     

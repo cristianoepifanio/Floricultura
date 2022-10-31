@@ -1,0 +1,21 @@
+@media screen and (max-width: 500px){
+    .conteiner{
+        display: flex;
+        flex-direction: column;
+    }
+    nav {
+        width: 80%;
+    }
+    img{
+        width: 100px;
+    }
+    .bloco {
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 100px;){
+    nav{
+        width: 60%;
+    }
+    
+}
