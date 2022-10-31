@@ -1,18 +1,26 @@
+/* Geral */
 *{
     margin: 0%;
 }
-body{
-    background-image: url(../fotos/fotoa-redimensionadas-para-o-site/background.jpg);
-    background-attachment: fixed;
-    background-size: cover;
-    font-family: Arial, Helvetica, sans-serif;
-}
+/* Menu */
 header{
     background-color: rgb(255, 255, 255);
     display: flex;
     position: fixed;
     width: 100%;
     margin-bottom: 1%;    
+}
+.conteiner{
+    margin: auto;
+    margin-top: 1%;
+    border-radius: 10px;
+    width: 97%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #076422;
+    color: #fff;
+    padding: 15px;
 }
 nav {
     display: flex;
@@ -29,17 +37,18 @@ nav a:hover {
     padding: 6px;
     transition: 0.3s;
 }
+/* corpo */
+body{
+    background-image: url(../fotos/fotoa-redimensionadas-para-o-site/background.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .foto-perfil {
     border-radius: 50%;
     justify-content: flex-end;
     margin-top: 10%;
-}
-.redes-sociais {
-    
-    align-items: center;
-    display: flex; 
-    flex-direction: row;
-    gap: 20px;
 }
 .fa-brands {
     width: 60px; 
@@ -50,18 +59,7 @@ nav a:hover {
     margin: auto;
     
 }
-.conteiner{
-    margin: auto;
-    margin-top: 1%;
-    border-radius: 10px;
-    width: 97%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #076422;
-    color: #fff;
-    padding: 15px;
-}
+
 .bloco {
     
     background-color: rgb(255, 255, 255);
@@ -78,7 +76,7 @@ img{
     width: 300px;
     margin: 5px;
 }
-
+/* Rodapé */
 footer{
     background-color: #884919;
     height: 150px;
@@ -89,4 +87,11 @@ footer{
     flex-direction: column;
     justify-content: center;
     gap: 5%;
+}
+.redes-sociais {
+    
+    align-items: center;
+    display: flex; 
+    flex-direction: row;
+    gap: 20px;
 }

@@ -13,9 +13,10 @@
         font-size: 14px;
     }
 }
-@media screen and (max-width: 100px;){
+@media screen and (max-width: 100px){
     nav{
-        width: 60%;
+        width: 20%;
     }
+    
     
 }
