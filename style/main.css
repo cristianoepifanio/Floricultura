@@ -88,9 +88,10 @@ img{
 }
 /* Rodapé */
 footer{
-    background-color: #884919;
+    /* background-color: #884919; */
+    background-image: url(../fotos/fotoa-redimensionadas-para-o-site/madeira\ fundo\ 1.jpg);
     height: 150px;
-    color: #fff;
+    color: #043f15;
     margin: auto;
     display: flex;
     text-align: center;
