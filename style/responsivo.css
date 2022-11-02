@@ -12,6 +12,13 @@
     .bloco {
         font-size: 14px;
     }
+    .paragrafo-foto{
+        display: flex;
+        flex-direction:column;
+    }
+    .foto-perfil{
+        width: 80%;
+    }
 }
 @media screen and (max-width: 100px){
     nav{
