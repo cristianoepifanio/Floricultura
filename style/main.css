@@ -42,11 +42,8 @@ body{
     background-image: url(../fotos/fotoa-redimensionadas-para-o-site/background.jpg);
     background-attachment: fixed;
     background-size: cover;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     
-}
-.espaco{
-    height: 40%;
 }
 .paragrafo-foto{
     display: flex;
