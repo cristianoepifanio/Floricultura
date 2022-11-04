@@ -4,17 +4,17 @@
 }
 /* Menu */
 header{
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0);
     display: flex;
     position: fixed;
     width: 100%;
-    margin-bottom: 1%;    
+    margin-bottom: 1%; 
+    overflow: hidden;
+    top: 0%;   
 }
 .conteiner{
     margin: auto;
-    margin-top: 1%;
-    border-radius: 10px;
-    width: 97%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -50,6 +50,7 @@ body{
 }
 .paragrafo-foto{
     display: flex;
+    border: 10px solid white;
 }
 .foto-perfil {
     border-radius: 50%;
@@ -87,7 +88,7 @@ img{
     margin: 5px;
 }
 /* Rodapé */
-footer{
+footer {
     /* background-color: #884919; */
     background-image: url(../fotos/fotoa-redimensionadas-para-o-site/madeira\ fundo\ 1.jpg);
     height: 150px;
@@ -99,11 +100,16 @@ footer{
     justify-content: center;
     gap: 5%;
     padding-top: 1.5%;
+    
 }
-address{
-    background-color: rgba(255, 255, 255, 0.199);
+a {
+    color: #043f15;
+}
+address {
+    background-color: rgba(255, 255, 255, 0.1);
    width: 50%;
    margin: auto;
+   
 }
 .redes-sociais {
     
