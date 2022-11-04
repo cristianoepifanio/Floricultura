@@ -79,7 +79,6 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 .categorias h1{
     margin: 20%;
@@ -120,4 +119,7 @@ address {
     display: flex; 
     flex-direction: row;
     gap: 20px;
+}
+html{
+    scroll-behavior: smooth;
 }
