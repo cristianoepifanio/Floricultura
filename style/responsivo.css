@@ -27,7 +27,7 @@
 }
 @media screen and (max-width: 1000px){
     nav{
-        width: 20%;
+        width: 100%;
     }
     .paragrafo-foto{
         display: flex;
