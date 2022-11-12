@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,25 +7,28 @@
     <!-- Links CSS -->
     <link rel="stylesheet" href="style/main.css">
     <link rel="stylesheet" href="style/responsivo.css">
-    <link rel="stylesheet" href="style/owl.carousel.min.css">
-     <link rel="stylesheet" href="style/owl.theme.default.min.css">
+ 
      <!-- Links JAVASCRIPT -->
     <script src="https://kit.fontawesome.com/20b170574e.js" crossorigin="anonymous"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/owl.carousel.min.js "></script>
-    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="js/main.js">
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
     <title>Floricultura Teresinha</title>
 </head>
 <body>
   <header>
     <div class="conteiner">
-      <h1>Floricultura - nome</h1>
+      <h1>Flores Rosas do Deserto</h1>
       <nav>
         <li type="none"><a href="#Sobre-nos">Sobre nós</a></li>
         <li type="none"><a href="#Catalogo">Catálogo</a></li>
         <li type="none"><a href="#Historia">História</a></li>
-        <li type="none"><a href="#">Contatos</a></li>
+        <li type="none"><a href="#Contatos">Contatos</a></li>
         
       </nav>
     </div>
@@ -49,22 +52,21 @@
     <h1>Catálogo</h1>
   </div>
   <div class="bloco">
-    <div class="carrossel-flores"></div>
-    <div class="owl-carousel owl-theme">
-        <div class="item">
-          <img class="box-flores" src="fotos/teste.jpeg" alt="Rosa do deserto"><h2>Rosa do deserto</h2>
-        </div>
-        </div>        
-        </div>               
+    <div id="owl-example" class="owl-carousel owl-theme">
+      <div class="item"><img src="fotos/img/brotos.jpeg" alt="Brotos"></div>
+      <div class="item"><img src="fotos/img/rosa branca.jpeg" alt="Rosa Branca"></div>
+      <div class="item"><img src="fotos/img/rosa branca media.jpeg" alt="Rosa Branca Média"></div>
+      <div class="item"><img src="fotos/img/rosa única.jpeg" alt="Rosa Única"></div>
+      <div class="item"><img src="fotos/img/rosa de duas.jpeg" alt="Rosa de Duas"></div>
+      <div class="item"><img src="fotos/img/rosa cheia.jpeg" alt="Rosa Cheia"></div>
+      </div>              
   </div>
      
-    
-  </div>
   <div id="Historia" class="categorias">
     <h1>História</h1>
   </div>
   <div class="bloco">
-    <p>Minha caminhada se iniciou desde que cheguei na Mariapolis de Igarassu, onde encontrei uma natureza maravilhosa. Então, decidi plantar flores tropicais, especialmente para utilização dos arranjos dos eventos. Depois por um período dei uma pausa porque tínhamos plantado em muitos lugares, e comecei reflorestando para proteção do nosso lençol d'água, com várias mudas que recebemos, de plantas nativas da mata Atlântica.
+    <p>Minha caminhada se iniciou desde que cheguei na Mariápolis de Igarassu, onde encontrei uma natureza maravilhosa. Então, decidi plantar flores tropicais, especialmente para utilização dos arranjos dos eventos. Depois por um período dei uma pausa porque tínhamos plantado em muitos lugares, e comecei reflorestando para proteção do nosso lençol d'água, com várias mudas que recebemos, de plantas nativas da mata Atlântica.
     Neste último período comecei a estudar sobre Rosas do Deserto, e me encantei! Comecei cultivando algumas plantas e aos poucos fui continuando, até que um dia  recebi uma providência para aumentar a produção e assim estamos agora.</p>
   </div>
   <div class="categorias">
@@ -75,9 +77,11 @@
     <address>Av. Alfredo Bandeira de Melo, 1 - Ana de Albuquerque, Igarassu - PE, 53630-030</address>
     
     <h2>Contatos:    <a href="#"><i class="fa-brands fa-whatsapp"></i></a> <a href="#"><i class="fa-brands fa-instagram"></i></a></h2>
-    <div class="redes-sociais">
-      
-    </div>
+    <div class="redes-sociais"></div>
+
   </footer>
+
+  <script src="js/main.js"></script>
+
 </body>
 </html>

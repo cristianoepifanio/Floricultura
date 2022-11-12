@@ -4,7 +4,7 @@
         flex-direction: column;
     }
     nav {
-        width: 80%;
+        width: 100%;
     }
     img{
         width: 100px;
@@ -27,13 +27,10 @@
 }
 @media screen and (max-width: 1000px){
     nav{
-        width: 100%;
+        width: unset;
     }
     .paragrafo-foto{
         display: flex;
         flex-direction:column;
     }
-    
-    
-    
 }

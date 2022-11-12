@@ -10,7 +10,8 @@ header{
     width: 100%;
     margin-bottom: 1%; 
     overflow: hidden;
-    top: 0%;   
+    top: 0%;  
+    z-index: 10; 
 }
 .conteiner{
     margin: auto;
