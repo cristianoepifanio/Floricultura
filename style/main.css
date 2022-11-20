@@ -47,6 +47,9 @@ body{
     behavior: smooth;
     
 }
+h1 {
+    
+}
 .conteiner2 {
     margin: auto;
     width: 100%;
@@ -61,6 +64,7 @@ body{
     background-color: bisque;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     border-radius: 5px;
+    padding: 10px 0;
 }
 .paragrafo-foto{
     display: flex;
@@ -68,10 +72,10 @@ body{
 }
 .foto-perfil {
     border-radius: 50%;
-    justify-content: flex-end;
-    margin-top: 10%;
+    justify-content: right;
+    margin: 10% 0 0 70%;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    float: right;
+    
     
 }
 .fa-brands {
@@ -86,24 +90,24 @@ body{
 .bloco {
     
     background-color: rgb(255, 255, 255);
-    padding: 15%;
+    padding: 10%;
     font-size: 20px;
     text-indent: 10%;
     
 }
-.bloco.reserva{
-    padding: 5%;
-    
+
+#Catalogo{
+    padding: 8%;
 }
 button {
-    margin-top: 1%;
+    margin: 1% auto;
     border: 3px solid #043f15;
     background-color: #fff;
     border-radius: 30px;
     padding: 1%;
     transition: 0.3s;
     font-size: x-large;
-    align-items: flex-end;
+    align-content: center;
 }
 button:hover{
     
