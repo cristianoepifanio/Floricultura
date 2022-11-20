@@ -47,6 +47,21 @@ body{
     behavior: smooth;
     
 }
+.conteiner2 {
+    margin: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    color: #043f15;
+    padding: 5px;
+}
+.cartaz {
+    background-color: bisque;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    border-radius: 5px;
+}
 .paragrafo-foto{
     display: flex;
     border: 10px solid white;
@@ -75,6 +90,26 @@ body{
     font-size: 20px;
     text-indent: 10%;
     
+}
+.bloco.reserva{
+    padding: 5%;
+    
+}
+button {
+    margin-top: 1%;
+    border: 3px solid #043f15;
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 1%;
+    transition: 0.3s;
+    font-size: x-large;
+    align-items: flex-end;
+}
+button:hover{
+    
+    background-color: #043f15;
+    color: #fff;
+    transition: 0.3s ease-in-out;
 }
 .box-flores{
     height: 100%;
@@ -112,6 +147,7 @@ footer {
 }
 a {
     color: #043f15;
+    text-decoration: none;
 }
 address {
     background-color: rgba(255, 255, 255, 0.1);
