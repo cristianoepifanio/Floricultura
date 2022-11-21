@@ -11,18 +11,27 @@
     }
     .bloco {
         font-size: 14px;
-    }
-    .paragrafo-foto{
         display: flex;
         flex-direction:column;
     }
+    
     .foto-perfil{
         width: 80%;
+        margin: auto;
+        margin-top: 2%;
     }
     address{
         background-color: rgba(255, 255, 255, 0.199);
        width: 90%;
        margin: auto;
+    }
+    nav{
+        padding: 2px;
+        width: 30%;
+        gap: 3%;
+    }
+    .conteiner2{
+        margin: 1%;
     }
 }
 @media screen and (max-width: 1000px){
