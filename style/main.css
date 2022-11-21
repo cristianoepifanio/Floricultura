@@ -48,7 +48,7 @@ body{
     
 }
 h1 {
-    
+
 }
 .conteiner2 {
     margin: auto;
@@ -73,7 +73,7 @@ h1 {
 .foto-perfil {
     border-radius: 50%;
     justify-content: right;
-    margin: 10% 0 0 70%;
+    margin: 3% 0 0 70%;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     
     
@@ -100,14 +100,15 @@ h1 {
     padding: 8%;
 }
 button {
-    margin: 1% auto;
+    margin: 3% auto;
     border: 3px solid #043f15;
     background-color: #fff;
     border-radius: 30px;
     padding: 1%;
     transition: 0.3s;
     font-size: x-large;
-    align-content: center;
+    position: relative;
+    float: right;
 }
 button:hover{
     
@@ -138,7 +139,7 @@ img{
 footer {
     /* background-color: #884919; */
     background-image: url(../fotos/fotoa-redimensionadas-para-o-site/madeira\ fundo\ 1.jpg);
-    height: 150px;
+   
     color: #043f15;
     margin: auto;
     display: flex;
@@ -148,6 +149,10 @@ footer {
     gap: 5%;
     padding-top: 1.5%;
     
+}
+iframe{
+    margin: 1% auto;
+    border-radius: 10px;
 }
 a {
     color: #043f15;
