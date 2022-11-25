@@ -1,9 +1,3 @@
-$(document).ready(function () {
-    
-    $("#owl-demo").owlCarousel({
-        
-    });
-});
 $(document).ready(function() {
    
    $("#owl-example").owlCarousel({
