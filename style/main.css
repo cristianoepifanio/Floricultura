@@ -38,6 +38,11 @@ nav a:hover {
     padding: 6px;
     transition: 0.3s;
 }
+.reserva{
+    display: block;
+    margin: auto;
+    width: 80%;
+}
 /* corpo */
 body{
     background-image: url(../fotos/fotoa-redimensionadas-para-o-site/background.jpg);
@@ -70,7 +75,7 @@ body{
 .foto-perfil {
     border-radius: 50%;
     justify-content: right;
-    margin: 3% 0 0 70%;
+    margin: 3% 0;
     box-shadow: rgba(31, 19, 19, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 .fa-brands {
@@ -93,15 +98,17 @@ body{
     
 }
 button {
-    margin: 3% auto;
+    margin: auto;
+   margin-top: 8%;
     border: 3px solid #043f15;
     background-color: #fff;
     border-radius: 30px;
-    padding: 1%;
+    padding: 1% 3%;
     transition: 0.3s;
     font-size: x-large;
-    position: relative;
-    float: right;
+    display: block;
+    
+  
 }
 button:hover{
     
@@ -130,6 +137,14 @@ img{
     width: 300px;
     margin: 5px;
 }
+.bloco-texto{
+    width: 60%;
+}
+.perfil{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 /* Rodapé */
 footer {
     /* background-color: #884919; */
@@ -141,13 +156,16 @@ footer {
     text-align: center;
     flex-direction: column;
     justify-content: center;
-    gap: 5%;
-    padding-top: 1.5%;
+    gap: 1em;
+    padding: 5% 0;
     background-repeat: no-repeat;
     background-size: cover;
    
 }
-
+footer h2 a{
+    word-wrap:none ;
+    display: inline-block;
+}
 iframe{
     margin: 1% auto;
     border-radius: 10px;
