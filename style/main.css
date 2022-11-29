@@ -108,6 +108,7 @@ button:hover{
     background-color: #043f15;
     color: #fff;
     transition: 0.3s ease-in-out;
+    cursor: pointer;
 }
 .box-flores{
     height: 100%;
@@ -142,8 +143,11 @@ footer {
     justify-content: center;
     gap: 5%;
     padding-top: 1.5%;
-    
+    background-repeat: no-repeat;
+    background-size: cover;
+   
 }
+
 iframe{
     margin: 1% auto;
     border-radius: 10px;
