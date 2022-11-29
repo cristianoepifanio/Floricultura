@@ -67,8 +67,14 @@ body{
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     border-radius: 5px;
     padding: 10px 0;
+    text-align: center;
 }
-
+.cartaz  img{
+    margin: 1rem auto;
+    max-width: 80%;
+    display: block;
+    border: 1px solid #076422;
+}
 .paragrafo-foto{
     display: flex;
     border: 10px solid white;
@@ -92,7 +98,10 @@ body{
     background-color: rgb(255, 255, 255);
     padding: 8%;
     font-size: 20px;
+}
+.bloco p{
     text-indent: 10%;
+
 }
 #Catalogo{
     
