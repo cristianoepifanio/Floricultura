@@ -68,6 +68,7 @@ body{
     border-radius: 5px;
     padding: 10px 0;
 }
+
 .paragrafo-foto{
     display: flex;
     border: 10px solid white;
@@ -93,7 +94,6 @@ body{
     font-size: 20px;
     text-indent: 10%;
 }
-
 #Catalogo{
     
 }
