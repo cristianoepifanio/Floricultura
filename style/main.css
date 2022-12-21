@@ -8,7 +8,7 @@ header{
     display: flex;
     position: fixed;
     width: 100%;
-    margin-bottom: 1%; 
+    margin: 0; 
     overflow: hidden;
     top: 0%;  
     z-index: 10; 
@@ -53,27 +53,41 @@ body{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     
 }
-
+/*  */
+.bloco2{
+    background-color: rgb(255, 255, 255);
+    padding: 2%;
+    justify-content: center;
+    color: #043f15;
+    
+}
+.bloco2 h1{
+    margin-top: 60px;
+}
 .conteiner2 {
     margin:3% auto;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
+    display: inline-block;
+    justify-content: center;
     align-items: center;
     background-color: #fff;
     color: #043f15;
     padding: 5px;
 }
-.cartaz {
+div .cartaz {
     background-color: bisque;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     border-radius: 5px;
-    padding: 10px 0;
+    padding: 10px;
+    display: inline-block;
     text-align: center;
+    width: 300px;
+    align-items: center;
+    margin: 1vw;
 }
 .cartaz  img{
     margin: 1rem auto;
-    max-width: 80%;
+    width: 80%;
     display: block;
     border: 1px solid #076422;
 }
@@ -105,9 +119,7 @@ body{
     text-indent: 10%;
 
 }
-#Catalogo{
-    
-}
+
 button {
     margin: auto;
    margin-top: 8%;
