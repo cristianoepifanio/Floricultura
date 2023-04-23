@@ -32,7 +32,7 @@
       <h1>Flores Rosas do Deserto</h1>
       <nav>
         <!-- <li type="none"><a href="#Sobre-nos">Sobre nós</a></li> -->
-        <li type="none"><a href="#Catalogo">Catálogo</a></li>
+        <li type="none"><a href="catalogo.html">Catálogo</a></li>
         <li type="none"><a href="#Historia">Carrinho</a></li>
         <li type="none"><a href="#Contatos">Fale conosco</a></li>
        <div class="button"><p>REGISTRAR-SE</p></div> 
@@ -40,17 +40,29 @@
     </div>
   </header>
   <div class="box">
+
+  <div class="transbox">
+
     <div class="login">
-      <!-- <input type="text" placeholder="NOME"> -->
-      <input type="text" placeholder="EMAIL OU NOME">
-      <input type="password" placeholder="SENHA">
-      <button>ENTRAR</button>
-    </div>
+        <!-- <input type="text" placeholder="NOME"> -->
+        <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+        <label>Email</label>
+        <input type="text" placeholder="">
+     <br>
+          <span class="icon"><ion-icon name="bag-outline"></ion-icon></ion-icon></span>
+          <label>Senha</label>
+          <input type="password" placeholder="">
+           <br>
+      <a href="#">Cadastro</a>
+
+    <button class="button"><a href="catalogo.html">ENTRAR</a></button>
+  </div>
+  </div>
   </div>
   <div class="bloco">
     <!--<div class="paragrafo-foto">
-    </div>-->
-    <p>Bem vindos(as) à Floricultura Flores Rosas do Deserto.</p>
+    </div>
+    <p>Bem vindos(as) à Floricultura Flores Rosas do Deserto.</p>-->
   </div>
 
   <div id="Sobre-nos" class="categorias">
@@ -80,7 +92,7 @@
     <a href="catalogo.html" class="reserva"><button>Faça sua reserva</button></a>
   </div>
 
-  <div id="Historia" class="categorias">
+  <!--<div id="Historia" class="categorias">
     <h1>História</h1>
   </div>
   <div class="bloco">
@@ -91,7 +103,7 @@
       Neste último período comecei a estudar sobre Rosas do Deserto, e me encantei! Comecei cultivando algumas plantas e
       aos poucos fui continuando, até que um dia recebi uma providência para aumentar a produção e assim estamos agora.
     </p>
-  </div>
+  </div>-->
   <div id="Contatos" class="categorias">
 
   </div>
@@ -114,6 +126,9 @@
   </footer>
 
   <script src="js/main.js"></script>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </body>
 

@@ -70,7 +70,7 @@ nav a:hover {
     /* margin-top: 69px ; */
     animation: anim 10s 1;
     transition:ease-in-out;
-    background-image: url(../fotos/img/rosa\ única.jpeg);
+    background-image: url(../fotos/fotoa-redimensionadas-para-o-site/background.jpg);
     background-size: cover;
     background-position-y: 30%;
     display: flex;
@@ -78,6 +78,7 @@ nav a:hover {
     margin: auto auto;
     align-items: center;
     justify-content: center;
+    
 }
 @keyframes anim {
     0%{
@@ -94,7 +95,7 @@ nav a:hover {
         background-position-y: 70%;
     }
     100%{
-        background-image: url(../fotos/img/rosa\ única.jpeg) ;
+        background-image: url(../fotos/fotoa-redimensionadas-para-o-site/background.jpg); 
         background-position-y: 20%;
         background-position-x: 30%;
     }
@@ -103,8 +104,24 @@ nav a:hover {
 /* ----------------------------------------------------
                  Formulário para login
 ----------------------------------------------------*/
-.login{
+
+.transbox{
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgb(255,255,255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0,0,0,.5);
     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.login{
+    display: inline-block;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -112,15 +129,17 @@ nav a:hover {
     margin: auto auto;
     
 }
+
 input{
     width: 200px;
     padding: 0.5rem 2rem;
     margin-bottom: 3rem;
-    border-radius: 10px;
+    border: none;
+    border-bottom: 2px solid #162938;
+    height: 13px;
+    background: transparent;
+    transform: translateY(-34%);
 }
-
-
-
 
 
 .reserva{
@@ -147,10 +166,10 @@ body{
     justify-content: center;
     color: #043f15;
     margin: 0 auto;
-        
 }
 .bloco2 h1{
     margin-top: inherit;
+    text-align: center;
 }
 .conteiner2 {
     margin:3% auto;
@@ -161,6 +180,7 @@ body{
     background-color: #fff;
     color: #043f15;
     padding: 5px;
+   
 }
 /* ----------------------------------------------------
       Cartazes dos catálogos de plantas
