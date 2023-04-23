@@ -282,15 +282,15 @@ img{
 footer {
     /* background-color: #884919; */
     background-image: url(../fotos/fotoa-redimensionadas-para-o-site/madeira\ fundo\ 1.jpg);
-   
+    background-position-y: 50% ;
     color: #043f15;
     margin: auto;
     display: flex;
     text-align: center;
-    flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 1em;
-    padding: 5% 0;
+    padding: 1.5rem 0;
     background-repeat: no-repeat;
     background-size: cover;
    
@@ -298,10 +298,12 @@ footer {
 footer h2 a{
     word-wrap:none ;
     display: inline-block;
+    font-size: 20px;
 }
 iframe{
-    margin: 1% auto;
+    margin: 3rem auto;
     border-radius: 10px;
+    width: 45vw;
 }
 a {
     color: #043f15;
@@ -309,7 +311,7 @@ a {
 }
 address {
     background-color: rgba(255, 255, 255, 0.1);
-   width: 50%;
+   width: 45vw;
    margin: auto;
    
 }
