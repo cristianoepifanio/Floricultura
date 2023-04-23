@@ -21,3 +21,10 @@ $(document).ready(function() {
    });
   
  });
+
+// ----------------------------------------------------
+//          CARRINHO
+// ----------------------------------------------------
+abriCarrinho = () => {
+    document.getElementById('carrinho').style.visibility = "visible";
+}

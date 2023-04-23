@@ -151,6 +151,9 @@ espaços em BRANCO que possuem os textos.
 .bloco p{
     text-indent: 10%;
 }
+.bloco h1{
+    text-align:center;
+}
 .bloco2{
     background-color: rgb(255, 255, 255);
     padding: 2%;
@@ -261,7 +264,20 @@ img{
 .bloco-texto{
     width: 60%;
 }
-
+/* ----------------------------------------------------
+            Carrinho config
+--------------------------------------------------- */
+#carrinho{
+    width: 200px;
+    height: 300px;
+    border: 2px solid black;
+    border-radius: 20px;
+    position: fixed;
+    right: 3rem;
+    bottom: 3rem;
+    background-color: #ccc;
+    visibility: hidden;
+}
 /* Rodapé */
 footer {
     /* background-color: #884919; */

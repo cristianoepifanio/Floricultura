@@ -3,6 +3,7 @@
         flex-diretion: column;
     }
 }
+
 @media screen and (max-width: 840px) {
     .conteiner {
         display: flex;
