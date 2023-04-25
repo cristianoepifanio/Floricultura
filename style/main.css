@@ -25,6 +25,7 @@ header{
     overflow: hidden;  
     z-index: 10; 
     padding: 0 3rem;
+    max-width: 1280px;
 }
 .conteiner{
     margin: auto;
@@ -42,12 +43,15 @@ nav {
     margin-right: 80px;
     align-items: center;
 }
-nav a {
+nav li{
+    width: 45%;
+}
+header a {
     text-decoration: none;
     color: #fff;
     margin: 8px;
 }
-nav a:hover {
+header a:hover {
     border: 1px solid #fff;
     border-radius: 30px;
     padding: 6px;
@@ -59,7 +63,7 @@ nav a:hover {
     padding: 0.5rem 2rem;
     border-radius: 30px;
     font-size: 20px;
-    min-width: 170.22px;
+    min-width: 150.22px;
     text-align: center;
     font-weight: 700;
     transition: ease-in-out 500ms;
@@ -130,6 +134,24 @@ input{
     border-radius: 10px;
 }
 
+/* ----------------------------------------------------
+                 Formulário para registrar-se
+----------------------------------------------------*/
+.register{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 70px auto;
+    width: 90vw;    
+}
+.register input{
+    margin-bottom: 23px;
+}
+.register > button{
+    margin-top: 30px;
+}
 
 
 
