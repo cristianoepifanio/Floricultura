@@ -147,8 +147,8 @@ input{
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin: 70px auto;
-    width: 90vw;    
+    margin: 70px 0;
+    width: 100vw;    
 }
 .register input{
     margin-bottom: 23px;
@@ -312,16 +312,16 @@ footer {
     background-image: url(../fotos/fotoa-redimensionadas-para-o-site/madeira\ fundo\ 1.jpg);
     background-position-y: 50% ;
     color: #043f15;
-    margin: auto;
+    /* margin: auto; */
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
     gap: 1em;
-    padding: 1.5rem 0;
+    padding: 0 1rem;
     background-repeat: no-repeat;
     background-size: cover;
-   
+    width: 100vw;
 }
 footer h2 a{
     word-wrap:none ;
@@ -352,5 +352,5 @@ address {
 }
 html{
     scroll-behavior: smooth;
-    width: 100vw;
+    /* width: 100vw; */
 }
