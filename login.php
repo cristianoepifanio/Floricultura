@@ -1,3 +1,14 @@
+<?php
+session_start();
+ob_start();
+include_once 'conexao.php';
+
+//esse ! aqui quer dizer SENAO, mais parenteses para a garantia de que não vai juntar as "!"
+if((!isset($_SESSION['id'])) AND (!isset($_SESSION['nome']))){
+    $_SESSION['msg'] = "<p style='font-size: 25px; color: #ff0000;'>Erro: Necessário fazer login para acessar a página!</p>";
+    header("Location: index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -32,11 +43,10 @@
       <h1>Flores Rosas do Deserto</h1>
       <nav>
         <ul>
-          <!-- <li type="none"><a href="#Sobre-nos">Sobre nós</a></li> -->
           <li type="none"><a href="#Catalogo" class="button">Catálogo</a></li>
-          <!-- <li type="none"><a href="#">Carrinho</a></li> -->
+          <li type="none"><a href="#NossoJogo" class="button">Nosso Jogo</a></li>
           <li type="none"><a href="#Contatos" class="button">Fale conosco</a></li>
-          <!-- <li type="none"><a href="register.html" class="button registrar">REGISTRAR-SE</a></li> -->
+          <li type="none"><a href="sair.php" class="button">Sair</a></li>
         </ul>
       </nav>
     </div>
@@ -44,27 +54,16 @@
   <main>
     <section class="box">
       <div class="login">
-        <p class="login">SEJAM BEM VINDOS </p>
+        <p class="login">SEJA BEM VINDO(A), <?php echo $_SESSION['nome']; ?> </p>
       </div>
     </section>
-    <!-- <div class="bloco">
-      <div class="paragrafo-foto">
-      </div>
-    
-    </div> -->
-    <!-- <div id="Sobre-nos" class="categorias">
-    </div> -->
+
     <section class="bloco perfil">
       <h2>Sobre nós</h2>
       <p class="bloco-texto">Somos uma floricultura especializada em Rosas do Deserto. Em nossa preocupação com a
         ecologia, nós fazemos o nosso próprio composto orgânico e reutilizamos itens reclicavéis como potes e pneus que
         normalmente são descartados de forma indevida, para a cultivação das nossas Rosas do Deserto. </p>
-      <!-- <img src="fotos/fotoa-redimensionadas-para-o-site/foto perfil experimento.jpg" class="foto-perfil" height="50%"
-        alt="Foto de perfil"> -->
     </section>
-    <!-- <div  class="categorias">
-      <h1>Catálogo</h1>
-    </div> -->
     <section class="bloco" id="Catalogo">
       <div id="owl-example" class="owl-carousel owl-theme">
         <div class="item"><img src="fotos/img/brotos.jpeg" alt="Brotos"></div>
@@ -76,20 +75,11 @@
       </div>
       <a href="catalogologin.html" class="reserva"><button>Faça sua reserva</button></a>
     </section>
-    <!--<div id="Historia" class="categorias">
-      <h1>História</h1>
-    </div>
-    <div class="bloco">
-      <p>Minha caminhada se iniciou desde que cheguei na Mariápolis de Igarassu, onde encontrei uma natureza maravilhosa.
-        Então, decidi plantar flores tropicais, especialmente para utilização dos arranjos dos eventos. Depois por um
-        período dei uma pausa porque tínhamos plantado em muitos lugares, e comecei reflorestando para proteção do nosso
-        lençol d'água, com várias mudas que recebemos, de plantas nativas da mata Atlântica.
-        Neste último período comecei a estudar sobre Rosas do Deserto, e me encantei! Comecei cultivando algumas plantas e
-        aos poucos fui continuando, até que um dia recebi uma providência para aumentar a produção e assim estamos agora.
-      </p>
-    </div>-->
-    <!-- <div id="Contatos" class="categorias">
-    </div> -->
+    <section id="NossoJogo" class="bloco jogo">
+      <h2>Jogo da floricultura</h2>
+      <br>
+      <p>Baixe nosso beta de jogo <a href="SnakeFlor.rar" download="SnakeFlor.rar" type="application/rar">aqui</a></p>
+   </section>
   </main>
   <footer id="Contatos">
     <iframe

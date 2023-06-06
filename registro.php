@@ -1,3 +1,7 @@
+<?php 
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -29,26 +33,26 @@
 <body>
   <header>
     <div class="conteiner">
-      <h1><a href="index.html">Flores Rosas do Deserto</a></h1>
+      <h1><a href="index.php">Flores Rosas do Deserto</a></h1>
       <nav>
         <ul>
-          <!-- <li type="none"><a href="#Sobre-nos">Sobre nós</a></li> -->
-          <!-- <li type="none"><a href="#Catalogo">Catálogo</a></li> -->
-          <!-- <li type="none"><a href="#">Carrinho</a></li> -->
-          <!-- <li type="none"><a href="#Contatos" class="button">Fale conosco</a></li>
-          <li type="none"><a href="register.html" class="button registrar">REGISTRAR-SE</a></li> -->
-          <li type="none"><a href="index.html" class="button">LOGIN</a></li>
+          <li type="none"><a href="index.php" class="button">LOGIN</a></li>
         </ul>
       </nav>
     </div>
   </header>
   <div class="register">
-    <form  action="banco.php" method="post">
-      <input type="text" id="" name="name" placeholder="NOME COMPLETO" autocomplete="off">
-      <input type="phone" id="" name="phone" placeholder="WHATSAPP" autocomplete="off">
-      <input type="email" id="" name="email" placeholder="EMAIL" autocomplete="off">
-      <input type="password" name="password" placeholder="SENHA" autocomplete="off">
-
+    <?php 
+    if(isset($_SESSION['msg']))
+    echo $_SESSION['msg'];
+    unset($_SESSION['msg']);
+    ?>
+    <form  method="post"  action="cadastro.php">
+      <input type="text" id="" name="nome" placeholder="NOME COMPLETO" required>
+      <input type="phone" id="" name="telefone" placeholder="WHATSAPP" required>
+      <input type="email" id="" name="email" placeholder="EMAIL" required>
+      <input type="password" name="senha_usuario" placeholder="SENHA" required>
+      
       <a href="#"><button type="submit">CADASTRAR</button></a>
     </form>
   </div>

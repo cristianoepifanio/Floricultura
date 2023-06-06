@@ -1,3 +1,9 @@
+<?php
+session_start();
+ob_start();
+include_once 'conexao.php';
+$dados = filter_input_array(INPUT_POST,FILTER_DEFAULT);
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -32,11 +38,10 @@
       <h1>Flores Rosas do Deserto</h1>
       <nav>
         <ul>
-          <!-- <li type="none"><a href="#Sobre-nos">Sobre nós</a></li> -->
           <li type="none"><a href="#Catalogo" class="button">Catálogo</a></li>
           <li type="none"><a href="#NossoJogo" class="button">Nosso Jogo</a></li>
           <li type="none"><a href="#Contatos" class="button">Fale conosco</a></li>
-          <li type="none"><a href="register.html" class="button registrar">REGISTRAR-SE</a></li>
+          <li type="none"><a href="registro.php" class="button registrar">REGISTRAR-SE</a></li>
         </ul>
       </nav>
     </div>
@@ -44,34 +49,74 @@
   <main>
     <section class="box">
       <div class="login">
-        <!-- <input type="text" placeholder="NOME"> -->
-        <input type="text" placeholder="EMAIL" id="email">
-        <input type="password" placeholder="SENHA">
-        <!-- <a href="#">Esqueceu a senha?</a> -->
-        <a href="#"><button><p>ENTRAR</p></button></a>
-        <p class="op">Ainda não se cadastrou? <a href="register.html">Clique aqui</a></p>
+      <?php
+      //Exemplo criptografar a senha
+      //echo password_hash(123456, PASSWORD_DEFAULT);
+  
+      ?>
+        <form method="POST" action="">
+            <input type="text" name="email" placeholder="EMAIL" value="<?php if(isset($dados['email']))
+            {echo $dados['email'];}?>">
+            <input type="password" name="senha_usuario" placeholder="SENHA" value="<?php if(isset($dados['senha_usuario']))
+            {echo $dados['senha_usuario'];}?>">
+            <?php
+            
+              // var_dump(empty($dados['SendLogin']));
+       
+        
+              if(!empty($dados['SendLogin'])){
+                // var_dump($dados);
+                $query_email = "SELECT id, nome, email, senha_usuario 
+                FROM usuarios 
+                WHERE email =:email  
+                LIMIT 1";
+                $result_email  = $conn->prepare($query_email);
+                $result_email-> bindParam(':email', $dados['email'], PDO::PARAM_STR);
+                $result_email-> execute();
+
+                if(($result_email) AND ($result_email->rowCount() != 0)){
+                  $row_email = $result_email->fetch(PDO::FETCH_ASSOC);
+                  // var_dump($row_email); 
+                  if(password_verify($dados['senha_usuario'], $row_email['senha_usuario'])){
+                    $_SESSION['id'] = $row_email['id'];
+                    $_SESSION['nome'] = $row_email['nome'];
+                    header("Location: login.php");
+                    exit();
+                  }else{
+                      $_SESSION['msg'] = "<p style='font-size: 25px; color: #ff0001'>Erro: Usuário ou senha inválida!</p>";
+                      // var_dump($dados);
+                    }
+                }
+                else{
+                  $_SESSION['msg'] = "<p style='font-size: 25px; color: #ff0000'>Erro: Usuário ou senha inválida!</p>";
+                }
+
+               
+              }
+
+              if(isset($_SESSION['msg'])){
+                echo $_SESSION['msg'];
+                unset($_SESSION['msg']);
+              }
+              
+            ?>
+            <!-- <a href="#">Esqueceu a senha?</a> -->
+            <a href="#"><button value="Acessar" name="SendLogin"><p>ACESSAR</p></button></a>
+            <p class="op">Ainda não se cadastrou? <a href="register.html">Clique aqui</a></p>
+        </form>
       </div>
     </section>
-    <!-- <div class="bloco">
-      <div class="paragrafo-foto">
-      </div>
-    
-    </div> -->
-    <!-- <div id="Sobre-nos" class="categorias">
-    </div> -->
+
     <section class="bloco perfil">
       <h2>Sobre nós</h2>
       <p class="bloco-texto">Somos uma floricultura especializada em Rosas do Deserto. Em nossa preocupação com a
         ecologia, nós fazemos o nosso próprio composto orgânico e reutilizamos itens reclicavéis como potes e pneus que
         normalmente são descartados de forma indevida, para a cultivação das nossas Rosas do Deserto. </p>
-      <!-- <img src="fotos/fotoa-redimensionadas-para-o-site/foto perfil experimento.jpg" class="foto-perfil" height="50%"
-        alt="Foto de perfil"> -->
     </section>
-    <!-- <div  class="categorias">
-      <h1>Catálogo</h1>
-    </div> -->
-    <section class="bloco" id="Catalogo">
-      <div id="owl-example" class="owl-carousel owl-theme">
+    <section class="bloco perfil" id="Catalogo">
+    <h2>Catálogo</h2> 
+    <p class="bloco-texto">Para visualizar nosso catálogo e fazer sua reserva, faça <a href="#login">login</a> para acessar ou se registre em nosso site.</p>
+      <!-- <div id="owl-example" class="owl-carousel owl-theme">
         <div class="item"><img src="fotos/img/brotos.jpeg" alt="Brotos"></div>
         <div class="item"><img src="fotos/img/rosa branca.jpeg" alt="Rosa Branca"></div>
         <div class="item"><img src="fotos/img/rosa branca media.jpeg" alt="Rosa Branca Enxerto"></div>
@@ -79,28 +124,16 @@
         <div class="item"><img src="fotos/img/rosa de duas.jpeg" alt="Rosa de Duas"></div>
         <div class="item"><img src="fotos/img/rosa cheia.jpeg" alt="Rosa Cheia"></div>
       </div>
-      <a href="catalogo.html" class="reserva"><button>Faça sua reserva</button></a>
+      <a href="catalogo.html" class="reserva"><button>Faça sua reserva</button></a> -->
     </section>
-    <!--<div id="Historia" class="categorias">
-      <h1>História</h1>
-    </div>
-    <div class="bloco">
-      <p>Minha caminhada se iniciou desde que cheguei na Mariápolis de Igarassu, onde encontrei uma natureza maravilhosa.
-        Então, decidi plantar flores tropicais, especialmente para utilização dos arranjos dos eventos. Depois por um
-        período dei uma pausa porque tínhamos plantado em muitos lugares, e comecei reflorestando para proteção do nosso
-        lençol d'água, com várias mudas que recebemos, de plantas nativas da mata Atlântica.
-        Neste último período comecei a estudar sobre Rosas do Deserto, e me encantei! Comecei cultivando algumas plantas e
-        aos poucos fui continuando, até que um dia recebi uma providência para aumentar a produção e assim estamos agora.
-      </p>
-    </div>-->
-    <!-- <div id="Contatos" class="categorias">
-    </div> -->
+
      <section id="NossoJogo" class="bloco jogo">
         <h2>Jogo da floricultura</h2>
         <br>
-        <p>Baixe nosso beta de jogo <a href="livro/curriculo.zip" download="curriculo.zip" type="application/zip">aqui</a></p>
+        <p>Baixe nosso beta de jogo <a href="SnakeFlor.rar" download="SnakeFlor.rar" type="application/rar">aqui</a></p>
      </section>
   </main>
+
   <footer id="Contatos">
     <iframe
     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.4199838989034!2d-34.91207619681826!3d-7.851037161345874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab14d4e2705717%3A0x4c7433749eb8713f!2sCentro%20Mari%C3%A1polis%20Santa%20Maria!5e0!3m2!1spt-BR!2sbr!4v1668990442002!5m2!1spt-BR!2sbr"
