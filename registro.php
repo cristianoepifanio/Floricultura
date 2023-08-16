@@ -9,13 +9,12 @@ session_start();
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Favicon -->
+
   <link rel="shortcut icon" href="fotos/Rose.ico" type="image/x-icon">
-  <!-- Links CSS -->
+
   <link rel="stylesheet" href="style/main.css">
   <link rel="stylesheet" href="style/responsivo.css">
 
-  <!-- Links JAVASCRIPT -->
   <script src="https://kit.fontawesome.com/20b170574e.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="js/main.js">
 
@@ -53,7 +52,7 @@ session_start();
       <input type="email" id="" name="email" placeholder="EMAIL" required>
       <input type="password" name="senha_usuario" placeholder="SENHA" required>
       
-      <a href="#"><button type="submit">CADASTRAR</button></a>
+      <button type="submit">CADASTRAR</button>
     </form>
   </div>
   <footer>

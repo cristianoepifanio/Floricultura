@@ -11,13 +11,10 @@ $dados = filter_input_array(INPUT_POST,FILTER_DEFAULT);
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Favicon -->
   <link rel="shortcut icon" href="fotos/Rose.ico" type="image/x-icon">
-  <!-- Links CSS -->
   <link rel="stylesheet" href="style/main.css">
   <link rel="stylesheet" href="style/responsivo.css">
 
-  <!-- Links JAVASCRIPT -->
   <script src="https://kit.fontawesome.com/20b170574e.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="js/main.js">
 
@@ -49,34 +46,29 @@ $dados = filter_input_array(INPUT_POST,FILTER_DEFAULT);
   <main>
     <section class="box">
       <div class="login">
-      <?php
-      //Exemplo criptografar a senha
-      //echo password_hash(123456, PASSWORD_DEFAULT);
-  
-      ?>
+        
         <form method="POST" action="">
+          <!-- caso tiver erro de validação o codigo permanece -->
             <input type="text" name="email" placeholder="EMAIL" value="<?php if(isset($dados['email']))
             {echo $dados['email'];}?>">
             <input type="password" name="senha_usuario" placeholder="SENHA" value="<?php if(isset($dados['senha_usuario']))
             {echo $dados['senha_usuario'];}?>">
             <?php
-            
-              // var_dump(empty($dados['SendLogin']));
        
         
               if(!empty($dados['SendLogin'])){
-                // var_dump($dados);
                 $query_email = "SELECT id, nome, email, senha_usuario 
                 FROM usuarios 
                 WHERE email =:email  
                 LIMIT 1";
+                // consulta no banco de dados a query
                 $result_email  = $conn->prepare($query_email);
+                //usado para vincular um valor a consulta preparada, o param str diz que o valor recebido vai ser uma string
                 $result_email-> bindParam(':email', $dados['email'], PDO::PARAM_STR);
                 $result_email-> execute();
 
                 if(($result_email) AND ($result_email->rowCount() != 0)){
                   $row_email = $result_email->fetch(PDO::FETCH_ASSOC);
-                  // var_dump($row_email); 
                   if(password_verify($dados['senha_usuario'], $row_email['senha_usuario'])){
                     $_SESSION['id'] = $row_email['id'];
                     $_SESSION['nome'] = $row_email['nome'];
@@ -84,13 +76,11 @@ $dados = filter_input_array(INPUT_POST,FILTER_DEFAULT);
                     exit();
                   }else{
                       $_SESSION['msg'] = "<p style='font-size: 25px; color: #ff0001'>Erro: Usuário ou senha inválida!</p>";
-                      // var_dump($dados);
                     }
                 }
                 else{
                   $_SESSION['msg'] = "<p style='font-size: 25px; color: #ff0000'>Erro: Usuário ou senha inválida!</p>";
                 }
-
                
               }
 
@@ -100,9 +90,8 @@ $dados = filter_input_array(INPUT_POST,FILTER_DEFAULT);
               }
               
             ?>
-            <!-- <a href="#">Esqueceu a senha?</a> -->
             <a href="#"><button value="Acessar" name="SendLogin"><p>ACESSAR</p></button></a>
-            <p class="op">Ainda não se cadastrou? <a href="register.html">Clique aqui</a></p>
+            <p class="op">Ainda não se cadastrou? <a href="registro.php">Clique aqui</a></p>
         </form>
       </div>
     </section>
@@ -113,10 +102,9 @@ $dados = filter_input_array(INPUT_POST,FILTER_DEFAULT);
         ecologia, nós fazemos o nosso próprio composto orgânico e reutilizamos itens reclicavéis como potes e pneus que
         normalmente são descartados de forma indevida, para a cultivação das nossas Rosas do Deserto. </p>
     </section>
-    <section class="bloco perfil" id="Catalogo">
-    <h2>Catálogo</h2> 
-    <p class="bloco-texto">Para visualizar nosso catálogo e fazer sua reserva, faça <a href="#login">login</a> para acessar ou se registre em nosso site.</p>
-      <!-- <div id="owl-example" class="owl-carousel owl-theme">
+
+    <section class="bloco" id="Catalogo">
+      <div id="owl-example" class="owl-carousel owl-theme">
         <div class="item"><img src="fotos/img/brotos.jpeg" alt="Brotos"></div>
         <div class="item"><img src="fotos/img/rosa branca.jpeg" alt="Rosa Branca"></div>
         <div class="item"><img src="fotos/img/rosa branca media.jpeg" alt="Rosa Branca Enxerto"></div>
@@ -124,13 +112,13 @@ $dados = filter_input_array(INPUT_POST,FILTER_DEFAULT);
         <div class="item"><img src="fotos/img/rosa de duas.jpeg" alt="Rosa de Duas"></div>
         <div class="item"><img src="fotos/img/rosa cheia.jpeg" alt="Rosa Cheia"></div>
       </div>
-      <a href="catalogo.html" class="reserva"><button>Faça sua reserva</button></a> -->
+      <a href="catalogo.html" class="reserva"><button>Faça sua reserva</button></a>
     </section>
 
      <section id="NossoJogo" class="bloco jogo">
         <h2>Jogo da floricultura</h2>
         <br>
-        <p>Baixe nosso beta de jogo <a href="SnakeFlor.rar" download="SnakeFlor.rar" type="application/rar">aqui</a></p>
+        <p>Baixe nosso beta de jogo <a href="jogo.rar" download="jogo.rar" type="application/rar">aqui</a></p>
      </section>
   </main>
 

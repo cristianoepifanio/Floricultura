@@ -3,7 +3,6 @@ session_start();
 ob_start();
 include_once 'conexao.php';
 
-//esse ! aqui quer dizer SENAO, mais parenteses para a garantia de que não vai juntar as "!"
 if((!isset($_SESSION['id'])) AND (!isset($_SESSION['nome']))){
     $_SESSION['msg'] = "<p style='font-size: 25px; color: #ff0000;'>Erro: Necessário fazer login para acessar a página!</p>";
     header("Location: index.php");
@@ -16,13 +15,10 @@ if((!isset($_SESSION['id'])) AND (!isset($_SESSION['nome']))){
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Favicon -->
   <link rel="shortcut icon" href="fotos/Rose.ico" type="image/x-icon">
-  <!-- Links CSS -->
   <link rel="stylesheet" href="style/main.css">
   <link rel="stylesheet" href="style/responsivo.css">
 
-  <!-- Links JAVASCRIPT -->
   <script src="https://kit.fontawesome.com/20b170574e.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="js/main.js">
 
@@ -78,7 +74,7 @@ if((!isset($_SESSION['id'])) AND (!isset($_SESSION['nome']))){
     <section id="NossoJogo" class="bloco jogo">
       <h2>Jogo da floricultura</h2>
       <br>
-      <p>Baixe nosso beta de jogo <a href="SnakeFlor.rar" download="SnakeFlor.rar" type="application/rar">aqui</a></p>
+      <p>Baixe nosso beta de jogo <a href="jogo.rar" download="jogo.rar" type="application/rar">aqui</a></p>
    </section>
   </main>
   <footer id="Contatos">
