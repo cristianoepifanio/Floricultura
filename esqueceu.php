@@ -2,11 +2,7 @@
 session_start();
 ob_start();
 include_once 'conexao.php';
-
-if((!isset($_SESSION['id'])) AND (!isset($_SESSION['nome']))){
-    $_SESSION['msg'] = "<p style='font-size: 25px; color: #ff0000;'>Erro: Necessário fazer login para acessar a página!</p>";
-    header("Location: index.php");
-}
+$dados = filter_input_array(INPUT_POST,FILTER_DEFAULT);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -36,47 +32,55 @@ if((!isset($_SESSION['id'])) AND (!isset($_SESSION['nome']))){
 <body>
   <header>
     <div class="conteiner">
-    <h1><a href="login.php">Flores Rosas do Deserto</a></h1>
+    <h1><a href="index.php">Flores Rosas do Deserto</a></h1>
       <nav>
         <ul>
-          <li type="none"><a href="#Catalogo" class="button">Catálogo</a></li>
-          <li type="none"><a href="#NossoJogo" class="button">Nosso Jogo</a></li>
           <li type="none"><a href="#Contatos" class="button">Fale conosco</a></li>
-          <li type="none"><a href="sair.php" class="button">Sair</a></li>
+          <li type="none"><a href="index.php" class="button">LOGIN</a></li>
         </ul>
       </nav>
     </div>
   </header>
-  <main>
-    <section class="box">
-      <div class="login">
-        <p class="login">SEJA BEM VINDO(A), <?php echo $_SESSION['nome']; ?> </p>
-      </div>
-    </section>
+  <div class="register">
+  <!-- trocar para esqueceu, e configurar css-->
 
-    <section class="bloco perfil">
-      <h2>Sobre nós</h2>
-      <p class="bloco-texto">Somos uma floricultura especializada em Rosas do Deserto. Em nossa preocupação com a
-        ecologia, nós fazemos o nosso próprio composto orgânico e reutilizamos itens reclicavéis como potes e pneus que
-        normalmente são descartados de forma indevida, para a cultivação das nossas Rosas do Deserto. </p>
-    </section>
-    <section class="bloco" id="Catalogo">
-      <div id="owl-example" class="owl-carousel owl-theme">
-        <div class="item"><img src="fotos/img/brotos.jpeg" alt="Brotos"></div>
-        <div class="item"><img src="fotos/img/rosa branca.jpeg" alt="Rosa Branca"></div>
-        <div class="item"><img src="fotos/img/rosa branca media.jpeg" alt="Rosa Branca Enxerto"></div>
-        <div class="item"><img src="fotos/img/rosa única.jpeg" alt="Rosa Única"></div>
-        <div class="item"><img src="fotos/img/rosa de duas.jpeg" alt="Rosa de Duas"></div>
-        <div class="item"><img src="fotos/img/rosa cheia.jpeg" alt="Rosa Cheia"></div>
-      </div>
-      <a href="catalogo.php" class="reserva"><button>Faça sua reserva</button></a>
-    </section>
-    <section id="NossoJogo" class="bloco jogo">
-      <h2>Jogo da floricultura</h2>
-      <br>
-      <p>Baixe nosso beta de jogo <a href="jogo.rar" download="jogo.rar" type="application/rar">aqui</a></p>
-   </section>
-  </main>
+    <?php 
+    if(!empty($dados['SendRecupSenha'])){
+        
+        $query_email = "SELECT id, nome, email, senha_usuario 
+                        FROM usuarios 
+                        WHERE email =:email  
+                        LIMIT 1";
+        // consulta no banco de dados a query
+        $result_email  = $conn->prepare($query_email);
+        //usado para vincular um valor a consulta preparada, o param str diz que o valor recebido vai ser uma string
+        $result_email-> bindParam(':email', $dados['email'], PDO::PARAM_STR);
+        $result_email-> execute();
+
+        if(($result_email) AND ($result_email->rowCount() != 0)){
+
+            var_dump($dados);
+            
+        }
+        else{
+            $_SESSION['msg'] = "<p style='font-size: 25px; color: #ff0001'>Erro: Usuário não encontrado!</p>";
+        }
+    }
+
+    if(isset($_SESSION['msg'])){
+        echo $_SESSION['msg'];
+        unset($_SESSION['msg']);
+      }
+    
+    ?>
+
+    <form  method="post"  action="">
+        <input type="text" name="email" placeholder="EMAIL" value="<?php if(isset($dados['email']))
+        {echo $dados['email'];}?>">
+
+        <a href=""><button value="Recuperar" name="SendRecupSenha"><p>ENVIAR</p></button></a>  
+    </form>
+  </div>
   <footer id="Contatos">
     <iframe
     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.4199838989034!2d-34.91207619681826!3d-7.851037161345874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab14d4e2705717%3A0x4c7433749eb8713f!2sCentro%20Mari%C3%A1polis%20Santa%20Maria!5e0!3m2!1spt-BR!2sbr!4v1668990442002!5m2!1spt-BR!2sbr"
@@ -90,7 +94,7 @@ if((!isset($_SESSION['id'])) AND (!isset($_SESSION['nome']))){
                 <h2>
                   Contatos:
                 </h2>
-                <a href="https://wa.me/5581998636465?text= Olá, Dona Terezinha! Tudo bem?" target="_blank"><i class="fa-brands fa-whatsapp"></i>+55 81 998636465</a>  <a
+                <a href="https://wa.me/5581998636465?text= Olá, Dona Terezinha! Tudo bem?" target="_blank"><i class="fa-brands fa-whatsapp"></i>+55 81 998636465</a> <a
                 href="https://www.instagram.com/floriculturatere/?igshid=YmMyMTA2M2Y%3D" target="_blank"><i
                     class="fa-brands fa-instagram"></i>rdterezinha_</a>
             </div>

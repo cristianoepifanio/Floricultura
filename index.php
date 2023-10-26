@@ -32,7 +32,7 @@ $dados = filter_input_array(INPUT_POST,FILTER_DEFAULT);
 <body>
   <header>
     <div class="conteiner">
-      <h1>Flores Rosas do Deserto</h1>
+    <h1><a href="index.php">Flores Rosas do Deserto</a></h1>
       <nav>
         <ul>
           <li type="none"><a href="#Catalogo" class="button">Catálogo</a></li>
@@ -47,15 +47,16 @@ $dados = filter_input_array(INPUT_POST,FILTER_DEFAULT);
     <section class="box">
       <div class="login">
         
+        <!-- o action vazio faz receber os dados da mesma página -->
         <form method="POST" action="">
           <!-- caso tiver erro de validação o codigo permanece -->
             <input type="text" name="email" placeholder="EMAIL" value="<?php if(isset($dados['email']))
             {echo $dados['email'];}?>">
             <input type="password" name="senha_usuario" placeholder="SENHA" value="<?php if(isset($dados['senha_usuario']))
             {echo $dados['senha_usuario'];}?>">
+
             <?php
-       
-        
+            
               if(!empty($dados['SendLogin'])){
                 $query_email = "SELECT id, nome, email, senha_usuario 
                 FROM usuarios 
@@ -92,6 +93,7 @@ $dados = filter_input_array(INPUT_POST,FILTER_DEFAULT);
             ?>
             <a href="#"><button value="Acessar" name="SendLogin"><p>ACESSAR</p></button></a>
             <p class="op">Ainda não se cadastrou? <a href="registro.php">Clique aqui</a></p>
+            <p class="op">Esqueceu a senha? <a href="esqueceu.php">Clique aqui</a></p>
         </form>
       </div>
     </section>
@@ -135,12 +137,18 @@ $dados = filter_input_array(INPUT_POST,FILTER_DEFAULT);
                 <h2>
                   Contatos:
                 </h2>
-                <a href="tel:++55081998636465"><i class="fa-brands fa-whatsapp"></i>+55 081 998636465</a> <a
+                <a href="https://wa.me/5581998636465?text= Olá, Dona Terezinha! Tudo bem?" target="_blank"><i class="fa-brands fa-whatsapp"></i>+55 81 998636465</a> <a
                 href="https://www.instagram.com/floriculturatere/?igshid=YmMyMTA2M2Y%3D" target="_blank"><i
                     class="fa-brands fa-instagram"></i>rdterezinha_</a>
             </div>
     </div>
 </footer>
+
+<!-- <div class="whats">
+       <a href="https://wa.me/5581998636465?text= Olá, Dona Terezinha! Tudo bem?" target="_blank"> -->
+      <!-- <img src="fotos/whatsapp.png" alt="Fale Conosco pelo Whatsapp" title="Fale Conosco pelo Whatsapp">
+      </a>
+</div>    -->
 
   <script src="js/main.js"></script>
 

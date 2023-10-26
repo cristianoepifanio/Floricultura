@@ -1,3 +1,13 @@
+<?php
+session_start();
+ob_start();
+include_once 'conexao.php';
+
+if((!isset($_SESSION['id'])) AND (!isset($_SESSION['nome']))){
+    $_SESSION['msg'] = "<p style='font-size: 25px; color: #ff0000;'>Erro: Necessário fazer login para acessar a página!</p>";
+    header("Location: index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -21,7 +31,7 @@
     
     <header>
         <div class="conteiner">
-          <h1>Flores Rosas do Deserto</h1>
+        <h1><a href="login.php">Flores Rosas do Deserto</a></h1>
           <nav>
             <ul>
               <li type="none"><a href="#Contatos" class="button">Fale conosco</a></li>
@@ -76,7 +86,7 @@
                     <h2>
                       Contatos:
                     </h2>
-                    <a href="tel:++55081998636465"><i class="fa-brands fa-whatsapp"></i>+55 081 998636465</a> <a
+                    <a href="https://wa.me/5581998636465?text= Olá, Dona Terezinha! Tudo bem?" target="_blank"><i class="fa-brands fa-whatsapp"></i>+55 81 998636465</a>  <a
                     href="https://www.instagram.com/floriculturatere/?igshid=YmMyMTA2M2Y%3D" target="_blank"><i
                         class="fa-brands fa-instagram"></i>rdterezinha_</a>
                 </div>

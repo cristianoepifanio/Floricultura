@@ -68,7 +68,7 @@ session_start();
                 <h2>
                   Contatos:
                 </h2>
-                <a href="tel:++55081998636465"><i class="fa-brands fa-whatsapp"></i>+55 081 998636465</a> <a
+                <a href="https://wa.me/5581998636465?text= Olá, Dona Terezinha! Tudo bem?" target="_blank"><i class="fa-brands fa-whatsapp"></i>+55 81 998636465</a> <a
                 href="https://www.instagram.com/floriculturatere/?igshid=YmMyMTA2M2Y%3D" target="_blank"><i
                     class="fa-brands fa-instagram"></i>rdterezinha_</a>
             </div>
